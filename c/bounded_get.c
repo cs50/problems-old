@@ -1,13 +1,13 @@
-/************************************************
-/ bounded_get.c
-/ Jackson Steinkamp
-/
-/ Demonstrates basic decomposition of code
-/ using a function with parameters. 
-/
-/ (Assumes the CS50 Library is still being used
-/ to acquire inputs)
-*************************************************/
+/*************************************************
+* bounded_get.c
+* Jackson Steinkamp
+*
+* Demonstrates basic decomposition of code
+* using a function with parameters. 
+*
+* (Assumes the CS50 Library is still being used
+* to acquire inputs)
+**************************************************/
 
 #include<cs50.h>
 #include<stdio.h>

@@ -1,4 +1,4 @@
-/*********************************************************
+/**********************************************************
 * mean.c
 * Jackson Steinkamp
 *
@@ -9,7 +9,7 @@
 * iteration, for loops, and basic I/O. (What are some
 * ways this code could be improved to better shield it 
 * from an 'unfriendly user?')
-**********************************************************/
+***********************************************************/
 
 #include<stdio.h>
 
