@@ -16,8 +16,8 @@ heads@cs50.net
 
 Additionally, we're experimenting with using #tags in the header comments of
 each file to indicate what topical content is covered by the file. If you write
-some code on `for` loops, make sure to tag the file with something like `#for
-#loop` in the header comments.
+some code on `for` loops, make sure to tag the file with something like
+`#for #loop` in the header comments.
 
 Contributing
 ============
