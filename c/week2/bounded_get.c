@@ -21,7 +21,7 @@ int
 main_nofunctions(void)
 {
   // get the user's birth month, making sure it's a valid month
-  int month;
+  int month = 0;
   printf("What month were you born in?\n");
   while (month < 1 || month > 12)
   {
@@ -30,7 +30,7 @@ main_nofunctions(void)
   }
 
   // get the user's birth date, making sure it's a valid day
-  int day;
+  int day = 0;
   printf("What day were you born on?\n");
   while (day < 1 || day > 31)
   {
@@ -58,12 +58,13 @@ getint_bounded(int min, int max)
   int x;
 
   // Make sure the user is 'cooperative' and gives numbers within your bounds
-  while (x < min || x > max)
+  do
   {
     // Get an integer from the user
     printf("Please enter an integer between %d and %d.\n", min, max);
     x = GetInt();
-  }
+  } 
+  while (x < min || x > max);
 
   // 'Return' the integer to the main function
   return x;
