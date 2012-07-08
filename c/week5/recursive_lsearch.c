@@ -1,4 +1,4 @@
-/*******************************
+/************************************************
 * recursive_lsearch.c
 *
 * Jackson Steinkamp
@@ -7,7 +7,7 @@
 * A recursive version of linear search. 
 * Demonstrates pointer traversal of arrays,
 * a simple function, and basic recursion.
-**********************************/
+*************************************************/
 
 #include<stdbool.h>
 #include<stdio.h>
@@ -25,7 +25,7 @@ array_mem(int val_to_find, int *arr_front, int left)
     // If we're at (or, somehow, past) the end of the array
     if (left <= 1)
     {
-       /* base case. return true ony if the element left in
+       /* base case. return true only if the element left in
        the array is the one we're looking for */
        return (*arr_front == val_to_find);
     }
@@ -74,5 +74,5 @@ main(void)
 * 1. What is the worst case asymptotic running time of array_mem
 * proportional to the length of the array ('len')?
 * 2. What's the best case asymptotic running time? Besides using
-* a more efficient algorithm (like binary search!) how can this be optimized?
+* a more efficient algorithm, how can this code be optimized?
 ***********************************************************************/
