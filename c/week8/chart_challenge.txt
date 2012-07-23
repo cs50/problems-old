@@ -1,0 +1,27 @@
+/*****************************************************
+* Chart Challenge
+* 
+* #sql #database #query
+* 
+* Kevin Schmid
+* Computer Science 50
+*******************************************************/
+
+Imagine that Billboard, the publication that maintains the Hot 100 chart, has a SQL database with a table containing all songs that have ever appeared on the chart.  The table, called "hits", looks something like this: 
+
+|   id   |        title     |      artist       |   highest_chart_position 
+     1     "Call Me Maybe"    "Carly Rae Jepsen"             1             
+
+Note: the "id" column is an auto-incrementing primary key.
+
+Billboard needs your help maintaining this database.  See if you can write queries that...
+
+1) ... retrieve the titles of all number one songs. 
+
+2) ... change the highest_chart_position of the song with id #50 to be 3.
+
+3) ... add a song called "Super Malan" by "CorinneandKat" to the database, which peaked at #1 this week.
+
+4) ... remove a song called "The Campfire Song" by "Spongebob" after it was mistakenly added.
+
+5) *Challenge!* ... retrieve a list of all _distinct_ singers on the list, _ordered by_ artist name.
