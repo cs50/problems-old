@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>Call Me Recursively</title>
+        <script type="text/javascript" src="lyrics.js"></script>
+        <script type="text/javascript">
+            
+            function queueLyrics(lyrics, i) {
+                document.getElementById("current_lyric").innerHTML = lyrics[i].lyric;         
+                if (i+1 < lyrics.length) {
+                    window.setTimeout(queueLyrics, lyrics[i+1].time_after, lyrics, i+1)
+                }
+            };
+
+            // called when the user presses the start button
+            function startMusic() {
+                // start music
+                document.getElementById("player").play();
+
+                // hide start button
+                document.getElementById("startBtn").style.display = "none";
+                
+                // begin the lyrics!
+                queueLyrics(lyrics, 0);
+
+            }
+
+            // shows the "Start button" when the song loads
+            function showBtn() {
+                document.getElementById("startBtn").style.display = "";
+            }
+
+        </script>
+    </head>
+    <body>
+        <h1>Call Me Recursively</h1>
+        <h2>Special Thanks to David DiCiurcio</h2>
+        <h3>Kevin Schmid</h3>
+        <hr>
+        <p>
+            Last spring, a parody of Carly Rae Jepsen's hit, <i>Call Me Maybe</i> was released by David Kaufman, Meg Quintero, David DiCiurcio, Casey Fleeter, Jackson Steinkamp, Ali Nahm, and Joseph Ong, commemorating CS50.  (You can watch a music video <a href="http://www.youtube.com/watch?v=LY-apgB5bnA">here</a>!)
+        </p>
+        <p>
+            Hitting the <tt>Start</tt> button below will play the song in this window, too.
+        </p>
+        <p>
+            Take a look at the source code for this page.
+        </p>
+        <p>
+            Notice that when you hit that button, a function called <tt>startMusic</tt> is invoked.  Calling that function has three effects: 
+                <ul>
+                    <li> It starts the music.</li>
+                    <li> It hides the start button.</li>
+                    <li> It calls another function <tt>queueLyrics</tt>, which looks like it's not finished yet :-).</li>
+                </ul>
+
+        </p>
+        <p>
+            Wouldn't it be nice to display the lyrics while the song is playing? Check out the <tt>lyrics</tt> variable in <tt>lyrics.js</tt>! It is a JavaScript array of objects, each with two <i>properties</i>.
+
+            The <i>lyric</i> property corresponds to a lyric of the song, and the <i>time_after</i> represents the number of milliseconds that the lyric is sung after the previous one.   For example, the first time
+            "And this is crazy" is sung, we hear it 2500 milliseconds after "Hey, I just met you."
+        </p>
+        <p>
+            So you know how long to wait before singing the <tt>i+1</tt>st lyric.  See if you can finish the implementation of <tt>queueLyrics</tt> so that it sings the whole song, not just the <tt>ith</tt> line.  You may find <tt>window.setTimeout</tt> and the title of this page helpful ;-).  Remember, the function can currently sing the <tt>ith</tt> lyric.  Why not reuse it?
+        </p>
+        <h2 id="current_lyric"></h2>
+        <audio style="display:none" id="player" src="takecs50.mp3" oncanplaythrough="showBtn()"></audio>
+        <button onclick="startMusic()" id="startBtn" style="display:none"><h1>Start</h1></button>        
+        <hr>
+        <h3>Follow-up questions</h3>
+        <ol>
+            <li>How is JavaScript's <tt>window.setTimeout</tt> different from C's <tt>sleep</tt>? Similar?</li>
+            <li>What would happen if the song stopped playing while the lyrics were being displayed?
+            </li>
+            <li>Why don't we have to worry about a 1,000,000 line song causing a stack overflow? I mean, every time a new lyric is displayed, a new stack frame is opened, right?</li>
+            <li>How could you implement a pause function that would pause the lyrics when the user hits the pause button?</li>
+        </ol>
+    </body>
+
+</html>
