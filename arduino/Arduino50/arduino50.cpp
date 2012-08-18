@@ -13,6 +13,7 @@
 #include "Arduino.h"
 #include "arduino50.h"
 
+
 // currently, the max amount of questions are 10
 String inputs[MAX_Q];
 
@@ -83,7 +84,7 @@ Arduino50::checkpoint(int checkpoint_id)
 String
 Arduino50::check_read(solution s)
 {
-	return (digitalRead(s.pin) == s.val) ? silly(s.hash,s.num) : s.error;
+	return (digitalRead(s.pin) == s.val) ? s.hash : s.error;
 }
 
 /* String Arduino50::check_number()
@@ -161,6 +162,25 @@ void
 Arduino50::set_number(int num)
 {	
 	_number = num;	
+}
+
+/* void Arduino50::get_pin_mode()
+ * @param1: 
+ * purpose: get the pin's mode, it's a custom caller - still working on it
+ */
+int
+Arduino50::get_pin_mode()
+{
+	// uint8_t bit  = digitalPinToBitMask(_pin);
+	// uint8_t port = digitalPinToPort(_pin);
+	// 
+	// if (port == NOT_A_PIN) return LOW;
+	// 
+	// if (*portModeRegister(port) & bit) return HIGH;
+	// 
+	//return LOW;
+	
+	return 0;
 }
 
 /* void Arduino50::set_q_total()

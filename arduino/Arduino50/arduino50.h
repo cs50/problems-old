@@ -24,6 +24,7 @@ class Arduino50
 	String check_number(solution s);
 	String check_pin(solution s);
 	String  silly(String str, int num);
+	int  get_pin_mode();
 	int  get_q_total();
 	void load();
 	void write();
