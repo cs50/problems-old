@@ -1,28 +1,11 @@
-Week4
-=========================
+Week N
+======
+The following week contains the following exercises. 
 
-[Title]
-Author: [Author]
-Course: CS50 
+Mission Exercises: [TODO]
+===================================
+[TODO]
 
-[Summary]
-
-Goals:
-- [Goals]
-
-Introduction:
-- TODO
-
-Inventory:
-- TODO
-
-Schematic:
-- TODO
-
-Exercises:
-- TODO
-
-Achievements:
-- TODO
-
-
+Practice Exercises: Lights and Loops
+====================================
+[TODO]

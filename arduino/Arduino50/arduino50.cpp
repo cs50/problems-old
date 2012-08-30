@@ -84,7 +84,7 @@ Arduino50::checkpoint(int checkpoint_id)
 String
 Arduino50::check_read(solution s)
 {
-	return (digitalRead(s.pin) == s.val) ? s.hash : s.error;
+	return (digitalRead(s.pin) == s.val) ? silly(s.hash, s.num) : s.error;
 }
 
 /* String Arduino50::check_number()
@@ -94,7 +94,7 @@ Arduino50::check_read(solution s)
 String
 Arduino50::check_number(solution s)
 {
-	return (_number == s.val) ? s.hash : s.error;
+	return (_number == s.val) ? silly(s.hash, s.num) : s.error;
 }
 
 /* String Arduino50::check_pin()
@@ -104,7 +104,7 @@ Arduino50::check_number(solution s)
 String
 Arduino50::check_pin(solution s)
 {
-	return (_pin == s.pin) ? s.hash : s.error;
+	return (_pin == s.pin) ? silly(s.hash, s.num) : s.error;
 }
 
 /* String Arduino50::silly(String str, int num)
@@ -119,10 +119,10 @@ Arduino50::silly(String str, int num)
 	
 	// get total integer value
 	for(int i=0,n=str.length();i<n;i++)
-		index_value += str.charAt(i) - '0';
+		index_value += str.charAt(i) - '0' + num;
 		
-	// current value, multiply by itself; reverse bits - shift nums based on index
-    index_value *= ~index_value << num;
+	// current value, multiply by index, plus its value
+    index_value = num + index_value * str.length();
 	
 	// convert to Arduno String
 	return String(index_value);
@@ -162,25 +162,6 @@ void
 Arduino50::set_number(int num)
 {	
 	_number = num;	
-}
-
-/* void Arduino50::get_pin_mode()
- * @param1: 
- * purpose: get the pin's mode, it's a custom caller - still working on it
- */
-int
-Arduino50::get_pin_mode()
-{
-	// uint8_t bit  = digitalPinToBitMask(_pin);
-	// uint8_t port = digitalPinToPort(_pin);
-	// 
-	// if (port == NOT_A_PIN) return LOW;
-	// 
-	// if (*portModeRegister(port) & bit) return HIGH;
-	// 
-	//return LOW;
-	
-	return 0;
 }
 
 /* void Arduino50::set_q_total()
