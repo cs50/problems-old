@@ -4,7 +4,7 @@
 * Rob Bowden
 * Computer Science 50
 *
-* Write a function to print out the individual
+* Prints out the individual
 * bytes in the user-supplied integer, 1 per line
 *************************************************/
 
@@ -15,6 +15,7 @@
 int
 main(void)
 {
+    printf("Enter an integer: ");
     int x = GetInt();
 
     /**
