@@ -58,7 +58,7 @@ main(void)
 
 		for(int j = 1; j < 1000; j++) {
 
-			total_tests+=2;
+			total_tests += 2;
 
 			result res = naive_div(i, j);
 
@@ -69,15 +69,17 @@ main(void)
 			{
 				printf("error dividing %d by %d with naive_div: expected quotient of %d, got %d\n", i, j, correct_quotient, res.quotient);
 			}
-			else {
+			else
+			{
 			    tests_passed++;
 			}
-			
+
 			if (res.remainder != correct_remainder)
 			{
 				printf("error dividing %d by %d with naive_div: expected remainder of %d, got %d\n", i, j, correct_remainder, res.remainder);
 			}
-			else {
+			else
+			{
 			    tests_passed++;
 			}
 
@@ -88,5 +90,4 @@ main(void)
 
 	return 0;
 
-	
 }
