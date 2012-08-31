@@ -74,7 +74,8 @@ bit_shift_times(unsigned int a, unsigned int b)
 		return 0;
 	}
 
-	// start by considering multiplying by 2
+	// start by initializing a multiplier, which tracks how many times we've multiplied
+	// we can assume the result won't be 0 now
 	int multiplier = 1;
 	int result = a;
 
