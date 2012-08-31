@@ -7,7 +7,7 @@
 * Computer Science 50
 *
 * Performs multiplication of two unsigned integers without
-* using the * operating.
+* using the * operator.
 *******************************************************/
 
 
@@ -18,8 +18,10 @@
 int
 naive_times(unsigned int a, unsigned int b)
 {
+	// declare and initialize an accumulator
 	int result = 0;
 
+	// add a 'b' times to the accumulator
 	for(int i = 0; i < b; i++)
 	{
 		result += a;
@@ -36,8 +38,10 @@ naive_times(unsigned int a, unsigned int b)
 int
 less_naive_times(unsigned int a, unsigned int b)
 {
+	// declare and initialize an accumulator
 	int result = 0;
 
+	// if a is smaller than b, loop add b 'a' times
 	if (a < b)
 	{
 		for(int i = 0; i < a; i++)
@@ -64,23 +68,31 @@ less_naive_times(unsigned int a, unsigned int b)
 int
 bit_shift_times(unsigned int a, unsigned int b)
 {
+	// quick return: if one variable is 0
 	if (a == 0 || b == 0)
 	{
 		return 0;
 	}
 
-	int multiplier = 2;
+	// start by considering multiplying by 2
+	int multiplier = 1;
 	int result = a;
 
-	while(multiplier < b) {
-		result = result << 1;
+	// if the factor we are about to multiply the result by is less than b, go for it!
+	while(multiplier << 1 < b) {
+
+		// multiply the multiplier by 2
 		multiplier = multiplier << 1;
+
+		// multiply result by 2
+		result = result << 1;
+
 	}
 
-	multiplier = multiplier >> 1;
-
+	// find out how many more times we need to add
 	int remaining = b - multiplier;
 
+	// do that using conventional method
 	for(int i = 0; i < remaining ; i++)
 	{
 		result += a;
