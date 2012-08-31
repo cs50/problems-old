@@ -32,8 +32,8 @@ bool
 is_prime_better(int k)
 {
 
-	// we only actually have to up until k/2 (why?)
-	for(int i = 2; i*2 < k; i++)
+	// we only actually have to up until sqrt(k)
+	for(int i = 2; i*i <= k; i++)
 	{
 		if (k%i == 0)
 		{
