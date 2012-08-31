@@ -142,7 +142,7 @@ Mission50::mission_zero(solution* solution_arr)
 	mzero_eight.val  			= MISSION_ZERO_8_VAL   	        ;
 	mzero_eight.type			= MISSION_ZERO_8_TYPE   	    ;
 	mzero_eight.is_challenge 	= MISSION_ZERO_8_IS_CHALLENGE   ;
-	mzero_eight.error			= MISSION_ZERO_8_ERROR   	    ;
+	mzero_eight.error			= MISSION_ZERO_8_ERROR			;
 	mzero_eight.hash			= MISSION_ZERO_8_HASH           ;
 	
 	solution mzero_nine;
