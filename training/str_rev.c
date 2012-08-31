@@ -18,18 +18,17 @@ int
 main(void)
 {
 
-printf("Please enter a string for me to reverse, in place: ");
-char *s = GetString();
-printf("Your original string is at memory address %p\n", s);
+	printf("Please enter a string for me to reverse, in place: ");
+	char *s = GetString();
+	printf("Your original string is at memory address %p\n", s);
 
-for(int i = 0, end = strlen(s) -1; i < end; i++, end--)
-{
-	s[i] ^= s[end];
-	s[end] ^= s[i];
-	s[i] ^= s[end];
-}
+	for(int i = 0, end = strlen(s) -1; i < end; i++, end--)
+	{
+		s[i] ^= s[end];
+		s[end] ^= s[i];
+		s[i] ^= s[end];
+	}
 
-printf("Okay, cool! Here's your new string, at memory address %p: %s\n", s, s);
-
+	printf("Okay, cool! Here's your new string, at memory address %p: %s\n", s, s);
 
 }
