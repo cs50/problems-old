@@ -7,7 +7,7 @@
 * Computer Science 50
 *
 * Reverses a string, in place.
-* Otherwise known as "echo" when you enter a palindrome :-).
+* Reminiscient of "echo" when you enter a palindrome :-).
 *******************************************************/
 
 #include<stdio.h>
