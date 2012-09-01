@@ -18,11 +18,11 @@
 *
 * Some things to think about:
 * 1) What data type(s) would be acceptable containers for
-     the value to be printed?
-  2) In a similar vein, what is the maximum value that should
-     ever be printed? Minimum?
-  3) Be creative in your implementation, but make
-     correctness and not speed the ultimate goal!
+*    the value to be printed?
+* 2) In a similar vein, what is the maximum value that should
+*    ever be printed? Minimum?
+* 3) Be creative in your implementation, but make
+*    correctness and not speed the ultimate goal!
 *******************************************************/
 
 #include<stdio.h>
@@ -38,8 +38,8 @@ main(void)
 	// TODO: Print a positive number representing the number of times
 	// x would need to be incremented to be equal to 0
 
-	// Make the assumptions stated in the specification.
-	// Why is this not the best thing to do in practice?
+	// Make the assumption stated in the specification.
+	// Why is this assumption not the best to make in practice?
 
 
 }
