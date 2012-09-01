@@ -12,7 +12,7 @@
 * https://groups.google.com/d/msg/cs50-discuss/LRmxL7WCPQc/rLs7_UtDm1sJ
 *
 * Implement countdown.c according to the following specification:
-* The program should begin by asking the user for a number of seconds.
+* The program should begin by asking the user for a integral number of seconds.
 * The number must not exceed 3600.
 * Then, countdown from the number of seconds the user
 * provided, printing the current time remaining in mm:ss format every second.
