@@ -1,8 +1,3 @@
-#include<stdio.h>
-#include<cs50.h>
-
-#define ever (;;)
-
 /*****************************************************
 * loops.c
 *
@@ -11,6 +6,11 @@
 *
 * Fun with loops.
 *******************************************************/
+
+#include<stdio.h>
+#include<cs50.h>
+
+#define ever (;;)
 
 int
 main(void)
