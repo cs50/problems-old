@@ -11,6 +11,8 @@
 * - Valdiating user input
 * - Idiomatic user input re-prompting
 * - Loops
+* - Strings
+* - Charcaters/ASCII
 *
 * A particular university identifies its language courses
 * with a two character course identifier, in the following
