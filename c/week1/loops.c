@@ -12,8 +12,7 @@
 
 #define ever (;;)
 
-int
-main(void)
+int main(void)
 {
 
 	// 1) Rewrite the following for loop as a while loop.

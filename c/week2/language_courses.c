@@ -41,8 +41,7 @@
 * course identifier, but go for correctness first!
 *******************************************************/
 
-int
-main(void)
+int main(void)
 {
 
 	// TODO: Tell the user about your need for an integer.

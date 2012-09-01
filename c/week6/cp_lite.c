@@ -1,8 +1,8 @@
 /*****************************************************
 * cp_lite.c
-* 
+*
 * #file #io #fread #fwrite #fopen #fclose #data #information #context
-* 
+*
 * Kevin Schmid (Source code from http://cdn.cs50.net/2011/fall/psets/5/pset5/bmp/copy.c)
 * Computer Science 50
 *
@@ -10,7 +10,7 @@
 *
 * Below is an excerpted version of the source code from
 * Problem Set 5's copy.c.  Check it out!
-* 
+*
 * Directions: See if you can add code in the labeled space below that
 * will copy the contents (bytes) of infile (not necessarily a BMP) to outfile.
 *
@@ -19,7 +19,7 @@
 * - Using fread(), try to read bytes into the buffer from the input file.
 	(What if not all of the bytes you asked for were read? How would you know?)
 * - Using fwrite(), write bytes from the buffer to the output file.
-* 
+*
 * How would you know when you should continue? Stop?
 *
 * Follow up questions:
@@ -30,8 +30,7 @@
 
 #include<stdio.h>
 
-int
-main(int argc, char * argv[])
+int main(int argc, char * argv[])
 {
     // ensure proper usage
     if (argc != 3)

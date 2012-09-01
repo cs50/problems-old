@@ -19,8 +19,7 @@
 * After the program has counted down to 0 seconds, exit.
 *******************************************************/
 
-int
-main(void)
+int main(void)
 {
 
 	// TODO: Tell the user about your need for a number of seconds
