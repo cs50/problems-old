@@ -24,6 +24,7 @@ main(void)
 
 	for(int i = 0, end = strlen(s) -1; i < end; i++, end--)
 	{
+		// obnoxious XOR swap
 		s[i] ^= s[end];
 		s[end] ^= s[i];
 		s[i] ^= s[end];
