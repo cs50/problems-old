@@ -1,6 +1,8 @@
 #include<stdio.h>
 #include<cs50.h>
 
+#define EVER (;;)
+
 /*****************************************************
 * loops.c
 *
@@ -61,7 +63,27 @@ main(void)
 	 * Store the value in a variable called x.
 	 */
 
-	int x;
+//	int x;
 	// TODO: get an integer from the user greater than 100 according to the specification above
+
+	/*
+	 * 6) The following code, within the context of this C file, is the skeleton of an infinite
+	 *    loop, just like:
+	 *
+	 *    while(true)
+	 *    {
+	 *
+	 *
+	 * 	  }
+	 *
+	 *	  Why?
+	 */
+
+	for EVER
+	{
+
+
+
+	}
 
 }
