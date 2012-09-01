@@ -9,7 +9,6 @@
 *
 * Fun with loops, sleep, carriage return, user input, and more!
 * Inspired by a question on the cs50-discuss google group in June 2012.
-* https://groups.google.com/d/msg/cs50-discuss/LRmxL7WCPQc/rLs7_UtDm1sJ
 *
 * Implement countdown.c according to the following specification:
 * The program should begin by asking the user for a integral number of seconds.
