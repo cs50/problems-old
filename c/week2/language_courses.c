@@ -37,7 +37,7 @@
 * If the user provides out-of-range input, tell them to give you
 * another integer until they provide acceptable input.
 *
-* There are multiple ways to determine the correct
+* There are multiple ways to determine the
 * course identifier, but go for correctness first!
 *******************************************************/
 
