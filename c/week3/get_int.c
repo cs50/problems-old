@@ -5,12 +5,12 @@
  *
  *  Introduction to recursion.
  *
- *  Implement get_even_int, a function that uses the
- *  CS50's library GetInt() function to get an even
+ *  Finish implementing get_even_int, a function that uses the
+ *  CS50's library GetInt function to get an even
  *  integer from the user.
  *
  *  No need for loops - if the integer you get back from
- *  a call to GetInt() happens to be odd, don't panic!
+ *  a call to GetInt happens to be odd, don't panic!
  *  Just use the magic of recursion!
  *
  *  Otherwise, you can return the integer.
