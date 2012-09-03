@@ -26,7 +26,7 @@
  */
 int get_even_int(void)
 {
-	// Try to get an integer
+
 	int x = GetInt();
 
 	if (/* TODO: is x even? */)
