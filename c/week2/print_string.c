@@ -18,7 +18,7 @@
 #include<cs50.h>
 
 /*
- *	Prints a character, c, to stdout.
+ *  Prints a character, c, to stdout.
  */
 void print_char(char c)
 {
@@ -26,12 +26,12 @@ void print_char(char c)
 }
 
 /*
- *	Prints a string, s, to stdout.
+ *  Prints a string, s, to stdout.
  *  Only uses print_char.
  */
 void print_string(char* s)
 {
-	// TODO: Implement me!
+    // TODO: Implement me!
 }
 
 int main(void)
