@@ -21,7 +21,7 @@
 #include<cs50.h>
 
 /*
- *	Gets an even integer from the user.
+ *  Gets an even integer from the user.
  *  Does _not_ use a loop of any sort.
  */
 int get_even_int(void)
