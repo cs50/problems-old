@@ -8,7 +8,7 @@
 * Computer Science 50
 *
 * - Accepting user input
-* - Valdiating user input
+* - Validating user input
 * - Idiomatic user input re-prompting
 * - Loops
 * - Strings
