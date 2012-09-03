@@ -73,10 +73,10 @@ int main(void)
 	 *    {
 	 *
 	 *
-	 * 	  }
+	 *    }
 	 *
-	 *	  Why?
-	 *	  Idea from Stack Overflow: http://stackoverflow.com/questions/1401159/for-or-while-true-which-is-the-correct-c-sharp-infinite-loop
+	 *    Why?
+	 *    Idea from Stack Overflow: http://stackoverflow.com/questions/1401159/for-or-while-true-which-is-the-correct-c-sharp-infinite-loop
 	 */
 
 	for ever
