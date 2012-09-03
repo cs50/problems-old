@@ -1,6 +1,3 @@
-#include<stdio.h>
-#include<cs50.h>
-
 /*****************************************************
  *
  *	print_string.c
@@ -15,6 +12,9 @@
  *  Only use print_char in your implemntation.
  *
 *******************************************************/
+
+#include<stdio.h>
+#include<cs50.h>
 
 /*
  *	Prints a character, c, to stdout.
