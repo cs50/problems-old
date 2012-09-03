@@ -30,7 +30,7 @@ void print_char(char c)
  */
 void print_string(char* s)
 {
-
+	// TODO: Implement me!
 }
 
 int main(void)
