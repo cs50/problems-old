@@ -1,6 +1,6 @@
 /*****************************************************
  *
- *	print_string.c
+ *  print_string.c
  *  Kevin Schmid
  *
  *  Demonstrates the C representation of strings.
@@ -10,6 +10,7 @@
  *  prints it to stdout.
  *
  *  Only use print_char in your implemntation.
+ *  You don't even need strlen!
  *
 *******************************************************/
 
