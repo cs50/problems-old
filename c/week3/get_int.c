@@ -1,6 +1,6 @@
 /*****************************************************
  *
- *	get_int.c
+ *  get_int.c
  *  Kevin Schmid
  *
  *  Introduction to recursion.
