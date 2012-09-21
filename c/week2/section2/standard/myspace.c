@@ -4,6 +4,8 @@
  * Nate Hardison <nate@cs.harvard.edu>
  *
  * CoNvErTs UsEr-InPuTtEd TeXt InTo MySpAcE sTyLe!
+ * 
+ * Could also use islower().
  */
 
 #include <cs50.h>
