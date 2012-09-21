@@ -25,15 +25,15 @@ string number[] = {"one",
 
 // where the old man plays knick-knack in each verse
 string where[] = {"on my thumb",
-                   "on my shoe",
-                   "on my knee",
-                   "on my door",
-                   "on my hive",
-                   "on my sticks",
-                   "up in heaven",
-                   "on my gate",
-                   "on my spine",
-                   "once again"};
+                  "on my shoe",
+                  "on my knee",
+                  "on my door",
+                  "on my hive",
+                  "on my sticks",
+                  "up in heaven",
+                  "on my gate",
+                  "on my spine",
+                  "once again"};
 
 void print_verse(int verse)
 {
@@ -45,9 +45,11 @@ void print_verse(int verse)
 
 int main(void)
 {
+    // iterate over verses
     for (int i = 0; i < VERSES; i++) 
     {
-	    print_verse(i);
+    	// print i'th verse
+        print_verse(i);
 
         // print an extra line between verses, but not after last one!
         if (i < VERSES - 1)
