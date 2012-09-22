@@ -17,6 +17,7 @@
 // currently, the max amount of questions are 10
 String inputs[MAX_Q];
 
+// byte array for letters
 byte sevent_seg_alpha[26][7] = {
                                 { 1,1,1,0,1,1,1 }, // = A
                                 { 1,1,1,1,1,1,1 }, // = B
@@ -45,7 +46,7 @@ byte sevent_seg_alpha[26][7] = {
                                 { 0,1,0,0,1,1,1 }, // = Y
                                 { 1,1,0,1,1,0,1 }  // = Z
                                 };
-
+// byte array for numbers
 byte seven_seg_digits[10][7] = {
                                 { 1,1,1,1,1,1,0 },  // = 0                                               
                                 { 0,1,1,0,0,0,0 },  // = 1
@@ -228,20 +229,25 @@ Arduino50::get_q_total()
 }
 
 /* void print7_alpha()
- * 
- *
+ * @param1 letter - a one byte char to be displayed
+ * displays on a 7 segment led the given letter
  */
 void write7_alpha(char letter) 
 {
-
+	
+  // start at pin number 2
   byte pin   = 2;
+ 
+  // mod by 65 to give me the placement in the array
   byte digit = (byte)letter % 65;
 
+  // ternary operator - if it is Q/V/X/R turn the dot on
   (letter == 'Q' || 
    letter == 'V' ||
    letter == 'X' ||
    letter == 'R' ) ? write_dot(1) : write_dot(0);
 
+  // iterate through each of the alpha segments to instantly print the value
   for (byte segCount = 0; segCount < 7; ++segCount) {
     digitalWrite(pin, sevent_seg_alpha[digit][segCount]);
     ++pin;
@@ -250,13 +256,21 @@ void write7_alpha(char letter)
 }
 
 /* void print7_digital()
- * 
- *
+ * @param1 number - what integer do you want to display?
+ * displays on a 7 segment led the number
  */
 void write7_digit(int number) 
 {
+  // turn off dot
+  write_dot(0);
+  
+   // start pin	
   byte pin = 2;
+  
+  // convert number into a byte
   byte digit = (byte)number;
+ 
+  // iterate through the array to build the segment
   for (byte segCount = 0; segCount < 7; ++segCount) {
     digitalWrite(pin, seven_seg_digits[digit][segCount]);
     ++pin;
@@ -264,8 +278,8 @@ void write7_digit(int number)
 }
 
 /* void writeDot()
- * 
- *
+ * @param1 dot
+ * the 7 segment led has a dot, use this to help distingquish between values. 
  */
 void write_dot(byte dot) {
   digitalWrite(9, dot);
