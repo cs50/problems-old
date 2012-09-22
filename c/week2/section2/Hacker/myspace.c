@@ -5,8 +5,8 @@
  *
  * CoNvErTs UsEr-InPuTtEd TeXt InTo MySpAcE sTyLe!
  *
- * Could also use islower() and/or isupper()
- * Doesn't *need* to use bit ops to swap case
+ * Could also use islower() and/or isupper().
+ * Doesn't *need* to use bitwise ops to swap case.
  */
 
 #include <cs50.h>
