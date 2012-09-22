@@ -15,7 +15,6 @@
 
 /* 
  * setup() function is the Arduino's equivalent to C's main().
- * For now, we tell it to call a "fake" version of main.
  */
 void setup() { 
   
