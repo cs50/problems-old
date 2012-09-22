@@ -18,6 +18,7 @@ class Arduino50
 	void set_number(int num);
 	void set_pin(int pin);
 	void output();
+
   private:
 	void set_q_total(int qnum);
 	String check_read(solution s);
@@ -33,4 +34,9 @@ class Arduino50
 	int _pin;
 	solution* outputs;
 };
+
+
+void write7_digit(int  digit);
+void write7_alpha(char characater);
+void write_dot(byte dot);
 #endif

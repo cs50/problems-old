@@ -17,6 +17,49 @@
 // currently, the max amount of questions are 10
 String inputs[MAX_Q];
 
+byte sevent_seg_alpha[26][7] = {
+                                { 1,1,1,0,1,1,1 }, // = A
+                                { 1,1,1,1,1,1,1 }, // = B
+                                { 1,0,0,1,1,1,0 }, // = C
+                                { 1,1,1,1,1,1,0 }, // = D
+                                { 1,0,0,1,1,1,1 }, // = E                          
+                                { 1,0,0,0,1,1,1 }, // = F                                 
+                                { 1,0,1,1,1,1,1 }, // = G
+                                { 0,1,1,0,1,1,1 }, // = H
+                                { 0,1,1,0,0,0,0 }, // = I
+                                { 0,1,1,1,1,0,0 }, // = J
+                                { 1,0,1,0,1,1,1 }, // = K
+                                { 0,0,0,1,1,1,0 }, // = L
+                                { 1,0,1,0,1,0,1 }, // = M
+                                { 1,1,1,0,1,1,0 }, // = N
+                                { 1,1,1,1,1,1,0 }, // = O
+                                { 1,1,0,0,1,1,1 }, // = P
+                                { 1,1,1,1,1,1,0 }, // = Q
+                                { 1,1,1,0,1,1,1 }, // = R
+                                { 1,0,1,1,0,1,1 }, // = S
+                                { 0,0,0,1,1,1,1 }, // = T
+                                { 0,1,1,1,1,1,0 }, // = U
+                                { 0,1,1,1,1,1,0 }, // = V
+                                { 1,0,1,1,1,0,0 }, // = W
+                                { 0,1,1,0,1,1,1 }, // = X
+                                { 0,1,0,0,1,1,1 }, // = Y
+                                { 1,1,0,1,1,0,1 }  // = Z
+                                };
+
+byte seven_seg_digits[10][7] = {
+                                { 1,1,1,1,1,1,0 },  // = 0                                               
+                                { 0,1,1,0,0,0,0 },  // = 1
+                                { 1,1,0,1,1,0,1 },  // = 2
+                                { 1,1,1,1,0,0,1 },  // = 3
+                                { 0,1,1,0,0,1,1 },  // = 4
+                                { 1,0,1,1,0,1,1 },  // = 5
+                                { 1,0,1,1,1,1,1 },  // = 6
+                                { 1,1,1,0,0,0,0 },  // = 7
+                                { 1,1,1,1,1,1,1 },  // = 8
+                                { 1,1,1,0,0,1,1 }   // = 9                              
+                               };
+
+
 /* int Arduino50::Arduino50()
  * @param1: int problemid 
  * purpose: constructor for the object
@@ -184,3 +227,46 @@ Arduino50::get_q_total()
 	return _qtotal;
 }
 
+/* void print7_alpha()
+ * 
+ *
+ */
+void write7_alpha(char letter) 
+{
+
+  byte pin   = 2;
+  byte digit = (byte)letter % 65;
+
+  (letter == 'Q' || 
+   letter == 'V' ||
+   letter == 'X' ||
+   letter == 'R' ) ? write_dot(1) : write_dot(0);
+
+  for (byte segCount = 0; segCount < 7; ++segCount) {
+    digitalWrite(pin, sevent_seg_alpha[digit][segCount]);
+    ++pin;
+  }
+
+}
+
+/* void print7_digital()
+ * 
+ *
+ */
+void write7_digit(int number) 
+{
+  byte pin = 2;
+  byte digit = (byte)number;
+  for (byte segCount = 0; segCount < 7; ++segCount) {
+    digitalWrite(pin, seven_seg_digits[digit][segCount]);
+    ++pin;
+  }
+}
+
+/* void writeDot()
+ * 
+ *
+ */
+void write_dot(byte dot) {
+  digitalWrite(9, dot);
+}
