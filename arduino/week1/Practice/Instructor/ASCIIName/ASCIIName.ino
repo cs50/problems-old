@@ -79,7 +79,7 @@ void showNumbers(int *numbers)
      // writes out numbers using write7_digit
       write7_digit(numbers[i]);
       
-      // delays each letter
+      // delays each number
       delay(1000);
   }
 
