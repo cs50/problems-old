@@ -1,5 +1,5 @@
 /* Looking at Recursion!
- * Arduino Exploration Three
+ * Arduino Exploration Week 2
  * Author: Christopher Bartholomew
  * Course: CS50 
  *
@@ -12,18 +12,19 @@
  */
 
 // Define your LED to PIN Constant 
-#define RED    8
-#define ORANGE 9
-#define YELLOW 10
-#define GREEN  11
-#define BLUE   12
+#define RED    2
+#define ORANGE 4
+#define YELLOW 6
+#define GREEN  8
+#define BLUE   10
+#define CLEAR   12
 
 // Define the Max number of lights we will be iterating through. This also acts as your base case.
-#define MAX    5
+#define MAX    6
 
 //TODO: Create an array with MAX 
-//BONUS: Make the below array into a 2D array or create an additional array with each color's indivudal duration time. 
-int LIGHTS[MAX] = {RED, ORANGE, YELLOW, GREEN, BLUE }; 
+//BONUS: Make the below array into a 2D array or create an additional array with each color's individual duration time. 
+int LIGHTS[MAX] = {RED, ORANGE, YELLOW, GREEN, BLUE, CLEAR }; 
 
 void setup(){
     
@@ -37,6 +38,7 @@ void setup(){
    pinMode(YELLOW,    OUTPUT); 
    pinMode(GREEN,     OUTPUT);
    pinMode(BLUE,      OUTPUT); 
+   pinMode(CLEAR,      OUTPUT); 
    
    //TODO: Populate the parameters
    beginRecursiveLightCycle(MAX,0,LIGHTS);
