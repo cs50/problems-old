@@ -26,43 +26,19 @@
 #define BLUE   10
 #define INDIGO 12
 
+  // You're rainbox is broken, only sorting it will fix it
+  int pins[SIZE] = {12,4,2,10,6,8};
+
 void setup()
 {
   
-  // You're rainbox is broken, only sorting it will fix it
-  int pins[SIZE] = {12,4,2,10,6,8};
+
   
   // TODO -  Enable pinMode() for each pin, going to OUTPUT
   for(int i=0;i<=SIZE;i++)
     pinMode(pins[i],OUTPUT);
-  
-  // TODO - show the rainbow, by passing in first parameter the array and the second parameter HIGH/LOW
-  rainbow(pins,HIGH);
-  
-  // TODO - turn off your rainbow
-  rainbow(pins,LOW);
-  
-  // TODO - Use one of the three methods to Sort the Rainbow
-  //bubble_sort(pins, SIZE);
-  //selection_sort(pins, SIZE);
-  merge_sort(pins, SIZE);
-  
-  // anticpiation
-  delay(2000);
-  
-  // TODO - is the rainbow fixed?
-  rainbow(pins, HIGH);
-  
-  rainbow(pins, LOW);
-  // anticpiation
-  delay(2000);
-  
-  // BONUS - implement pick_my_color(COLOR,RAINBOW,SIZE) using binary search
-  // Remeber! Binary Search will need a "Sorted" array!
-  // http://en.wikipedia.org/wiki/Binary_search_algorithm
-  pick_my_color(BLUE,pins,SIZE);
- 
- }
+   
+}
 
 void rainbow(int *pins, int power)
 {
@@ -120,16 +96,16 @@ void selection_sort(int *pins, int size)
 
         // find the index of the minimum value in the array
         for (int j = i; j < size; j++)
-            if (array[j] < array[min])
+            if (pins[j] < pins[min])
                 min = j;
 
         // if the index of the min value is not i, swap so that the min value
         // goes into the array at index i.
         if (min != i)
         {
-            int temp = array[i];
-            array[i] = array[min];
-            array[min] = temp;
+            int temp = pins[i];
+            pins[i] = pins[min];
+            pins[min] = temp;
         }
     }
 }
@@ -221,5 +197,35 @@ void pick_my_color(int color, int* rainbow, int size)
 
 void loop()
 {
-   // ignore for now
+     // TODO - show the rainbow, by passing in first parameter the array and the second parameter HIGH/LOW
+  rainbow(pins,HIGH);
+  
+  // TODO - turn off your rainbow
+  rainbow(pins,LOW);
+  
+  // TODO - Use one of the three methods to Sort the Rainbow
+  //bubble_sort(pins, SIZE);
+  //selection_sort(pins, SIZE);
+  merge_sort(pins, SIZE);
+  
+  // anticpiation
+  delay(2000);
+  
+  // TODO - is the rainbow fixed?
+  rainbow(pins, HIGH);
+  
+  rainbow(pins, LOW);
+  // anticpiation
+  delay(2000);
+  
+  // BONUS - implement pick_my_color(COLOR,RAINBOW,SIZE) using binary search
+  // Remeber! Binary Search will need a "Sorted" array!
+  // http://en.wikipedia.org/wiki/Binary_search_algorithm
+  pick_my_color(BLUE,pins,SIZE);
+  
+    // TODO - turn off your rainbow
+  rainbow(pins,LOW);
+  
+    // You're rainbox is broken, only sorting it will fix it
+  pins[SIZE] = {12,4,2,10,6,8};
 }

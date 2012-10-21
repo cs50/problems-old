@@ -37,7 +37,7 @@ void setup()
   // TODO - turn off your rainbow
   rainbow(param1, param2);
   
-  // TODO - pick one of the three methods to implment!
+  // TODO - pick one of the three methods to implement.
   // bubble_sort(pins, SIZE);
   // http://en.wikipedia.org/wiki/Bubble_sort
   
