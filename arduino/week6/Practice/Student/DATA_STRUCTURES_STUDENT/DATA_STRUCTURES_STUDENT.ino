@@ -10,7 +10,7 @@
  * Demonstrates use of stacks/queues/single linked lists
  * 
  * BONUS:
- * 1. Create one using a Hash Table / Hash Function
+ * 1. Create one using a Hash Table / Hash Function - however you must force one collision and handle it using a linked list!
  ***************************************************************************/
  
 #include <stdlib.h>
@@ -19,7 +19,11 @@
 #define MAX_PINS 6
 #define EMPTY 0
 
-int PIN_COUNTER = 2;
+// global variable used for serial read
+int incomingByte = 0;  
+
+// the counter that is used as the loader
+int load_counter = 0;
 
 void setup()
 {
@@ -29,8 +33,6 @@ void setup()
         // init pins
         init_pinmode();
         
-        digitalWrite(1, LOW);
-        
 	// give user options
 	display_menu();      
 }
@@ -38,7 +40,7 @@ void setup()
 /*********************************************************************************************************************************************
  * TODO: Queue
  **********************************************************************************************************************************************/
- 
+
 // data structure that is used for Queue 
 typedef struct
 {
@@ -53,57 +55,62 @@ typedef struct
 }
 queue;
 
-// queue pin config
+// queue pin config - optional - use for loading pins
 int queue_pins[MAX_PINS] = { 2, 3, 4, 5, 6, 7 };
+
 // declare a queue (as a global variable)
 queue q;
 
+
 bool enqueue(int num)
 {
-      // if we're at capacity, we can't add anything more to our queue
-    if (q.size == MAX_PINS)
-    {
-        return false;
-    }
+    /* Remove Me
+    
+    // TODO!
+    // if we're at capacity, we can't add anything more to our queue - what should we return?
 
     // calculate the index of the "last" slot in the queue
-    int last = (q.head + q.size) % MAX_PINS;
+    // TODO!
 
     // add the new element to our queue
-    q.pins[last] = num;
+    // TODO!
     
     // toggle the light
     toggle(num);
     
     // adjust the size appropriately
-    q.size++;
-
+    // TODO!
+    
+    */
     return true;
 }
 
 bool dequeue(void)
 {
-      // if nothing's in our queue, we can't retrieve anything!
-    if (q.size == 0)
-    {
-        return NULL;
-    }
-
-    // grab the first element in our queue
-    int first = q.pins[q.head];
-
+    /* Remove Me
+    // TODO!
+    // if nothing's in our queue, we can't retrieve anything!
+    
+    // TODO!
+    // grab the "first" element in our queue
+     
+     
+    // FREE FOR YOU!
     // adjust the head of our queue to point to the next element
     // wrap back to the beginning if necessary
     q.head = (q.head + 1) % MAX_PINS;
     
     // toggle the light
-    toggle(first);
+    toggle(first)
     
+    // TODO!
     // adjust the size appropriately
-    q.size--;
-
+    
     return first;
+    */
+ 
 }
+
 
 /*********************************************************************************************************************************************
  * END
@@ -125,54 +132,53 @@ typedef struct
 stack;
 
 // stack pin config
-int stack_pins[MAX_PINS] = { 7, 6, 5, 4, 3, 2 };
+int stack_pins[MAX_PINS] = { 2, 3, 4, 5, 6, 7 };
 
 // declare a stack (as a global variable)
 stack s;
 
-// global variable used for serial read
-int incomingByte = 0;  
 
 bool push(int num)
 {
-      // if we're at capacity, we can't add anything more to our stack
-    if (s.size == MAX_PINS)
-    {
-        return false;
-    }
-
+    /* Remove Me
+    // TODO! 
+    // if we're at capacity, we can't add anything more to our stack
+    
+    // TODO!
     // add the new element to our stack
-    s.pins[s.size] = num;
     
     // toggle the light
     toggle(num);
     
+    // TODO!
     // adjust the size appropriately
-    s.size++;
-
+    */
     return true;
 }
 
 int pop()
-{
-  
+{  
+     /* Remove Me
+    // TODO! 
     // if nothing's in our stack, we can't retrieve anything!
-    if (s.size == 0)
-    {
-        return NULL;
-    }
-
+    
+    // FREE FOR YOU!
     // grab the last element in our stack
-   int last = s.pins[s.size - 1];
+    int last = s.pins[s.size - 1];
     
     // toggle the light
     toggle(last);
-    
+   
+    // TODO 
     // adjust the size accordingly
-    s.size--;
+    
+        return last;
+    */
 
-    return last;
 }
+
+
+
 /*********************************************************************************************************************************************
  * END
  **********************************************************************************************************************************************/
@@ -201,68 +207,77 @@ int previous_pin = 3;
 // the pin you want to insert
 int insert_pin   = 4;
 
-// the counter that is used as the loader
-int load_counter = 0;
-
 // declare the very first "led_node" in our list
 led_node* first = NULL;
 
-/**
- * Helper function to build a new node. We'll use it in all of our
- * functions below that add nodes to the list.
- */
+
 static struct led_node* build_node(int i)
 {
-    led_node* new_node = (led_node *)malloc(sizeof(led_node));
+    
+    /* Remove Me
+    // TODO!
+    // malloc a new led_node defined as "new_node" that is the size of a led_node
+    // NOTE: You must "cast" malloc's return to a (led_node*) type (arduino only))
+    
     if (new_node == NULL)
     {
         Serial.println("sll: error: Out of heap memory\n");
     }
+    
     new_node->pin  = i;
     new_node->next = NULL;
     return new_node;
+    */
 
 }
 
-/**
- * Puts a new node containing i at the front (head) of the list.
- */
 void prepend(int i)
 {
+   /* Remove Me
     led_node* new_node = build_node(i);
 
     // the first node of our list will be the second node of our new one
-    new_node->next = first;
+    new_node->next = // what node should this be?;
     
+    // TODO!
     // toggle light
-    toggle(i);
     
     // our new node is now going to be the first node
-    first = new_node;
+    first = // which means what node should this be?;
+    */
 }
 
-/**
- * Inserts a new node containing int i following node n.
- */
 static void insert_after(led_node* n, int i)
 {
+    /* Remove Me
     if (n != NULL)
     {
         led_node* new_node = build_node(i);
-        new_node->next = n->next;
-        n->next = new_node;
         
-        // toggle 
+        // TODO!
+        // point the new node's next member to n's next node
+        
+        // TODO!
+        // point the current node's next member to the new node
+        
+        // toggle light
         toggle(i);
     }
+    */
 }
 
 void append(int i)
 {
+  
+    /* Remove Me
     // track the previous node to the current one as well, since it's
     // otherwise impossible to insert *before* the current node
     led_node* prev = NULL;
-    for (led_node* cur = first; cur != NULL; cur = cur->next)
+    
+    // TODO!
+    // for each led_node; and as long as the led node is not null, the next increament should be equal to the next node :)
+    // i.e. not all for-loops HAVE to be ints :)
+    for ()
     {
         // make sure to update the prev pointer on every iteration!
         prev = cur;
@@ -276,40 +291,46 @@ void append(int i)
     else
     {
         // aren't you glad that you already wrote this one? ;-)
-        insert_after(prev, i);
-        
+        insert_after(prev, i);   
     }
+    */
    
 }
 
-/**
- * Returns true if a node in the list contains the value i and false
- * otherwise.
- */
-struct led_node* contains(int i)
+struct led_node* contains(int pin)
 {
-    for (led_node* n = first; n != NULL; n = n->next)
+    /* Remove Me
+    // TODO!
+    // for each led_node - starting with first; and as long as the led node is not null, the next increament should be equal to the next node :)
+    // i.e. not all for-loops HAVE to be ints :)
+    for ()
     {
-        if (n->pin == i)
-        {
-            return n;
-        }
+      
+        // if the node's pin is equal to "pin" - what should you return?
     }
+    
     return NULL;    
+    */
 }
 
-/**
- * Returns the length of the list.
- */
+
 int length(void)
 {
+    /* Remove Me
     int length = 0;
-    for (led_node* n = first; n != NULL; n = n->next)
+    
+    // TODO!
+    // for each led_node - starting with first; and as long as the led node is not null, the next increament should be equal to the next node :)
+    // i.e. not all for-loops HAVE to be ints :)
+    for ()
     {
-        length++;
+        // TODO!
+        // what should be incremented here?
     }
     return length;
+    */
 }
+
 
 /*********************************************************************************************************************************************
  * END
@@ -326,10 +347,10 @@ void display_menu()
 	Serial.println("4. pop  	(Stack Only)");
 	Serial.println("5. enqueue 	(Queue Only)");
 	Serial.println("6. dequeue 	(Queue Only)");
-	Serial.println("9. bye");
+        Serial.println("7. Reset 	(Stack & Queue Only)");
+        Serial.println("9. free nodes   (Linked List Only");
 	Serial.println("==========================");
-	
-       
+	 
 	do
   	{
     	// send data only when you receive data:
@@ -344,7 +365,7 @@ void display_menu()
 			switch(menu_digit)
 			{
 				case 1:
-					Serial.println("adding pins");
+					Serial.println("Adding Pins");
 					// use this to create first node if length is zero
                                         
                                         if(length() == base_pins[load_counter])
@@ -362,7 +383,7 @@ void display_menu()
                                         display_menu();
 				break;
 				case 2:
-					Serial.println("inserting pins");
+					Serial.println("Inserting Pins");
                                         // contains will send back a led_node structure
                                         if(contains(previous_pin) != NULL)
                                         {
@@ -374,19 +395,19 @@ void display_menu()
 				break;
 				case 3:
 					Serial.println("Pushing Pins On");
-                                        if(push(PIN_COUNTER))
+                                        if(push(stack_pins[load_counter]))
                                         {
                                           Serial.println("SUCCESS!");
-                                          if(PIN_COUNTER != 7)
+                                          if(load_counter != 7)
                                           {
-                                            PIN_COUNTER++;
+                                            load_counter++;
                                           }
                                         } 
                                         else
                                        {
                                           Serial.println("AT MAX!");                                      
                                        }
-                                        Serial.println(PIN_COUNTER);
+                                        Serial.println(load_counter);
                                         display_menu();
 				break;
 				case 4:
@@ -396,19 +417,19 @@ void display_menu()
 				break;
 				case 5:
 					Serial.println("Enqueue Pins");                                      
-                                        if(enqueue(PIN_COUNTER))
+                                        if(enqueue(queue_pins[load_counter]))
                                         {
                                           Serial.println("SUCCESS!");
-                                          if(PIN_COUNTER != 7)
+                                          if(load_counter != 7)
                                           {
-                                            PIN_COUNTER++;
+                                            load_counter++;
                                           }
                                         } 
                                         else
                                        {
                                           Serial.println("AT MAX!");                                      
                                        }
-                                        Serial.println(PIN_COUNTER);
+                                        Serial.println(load_counter);
                                         display_menu();
 				break;
 				case 6:
@@ -417,8 +438,14 @@ void display_menu()
                                         dequeue();
                                         display_menu();
 				break;
+				case 6:
+					// toggle pin
+					Serial.println("Reset");
+                                        reset();
+                                        display_menu();
+				break;
 				case 9:
-					Serial.println("Bye!");
+					Serial.println("Free Nodes (Linked List)!");
                                         // linked list only
                                         free_nodes();
 				break;
@@ -432,17 +459,26 @@ void display_menu()
 
 }
 
+/*
+ * sets pins to output
+ */
 void init_pinmode()
 {
     for(int i=1;i<=7;i++)
         pinMode(i,OUTPUT);
 }
 
+/*
+ * toggles the led on and off
+ */
 void toggle(int pin)
 {
   (digitalRead(pin) == HIGH) ? digitalWrite(pin, LOW) : digitalWrite(pin, HIGH);
 }
 
+/*
+ * used for linked list
+ */
 void free_nodes()
 {
     // toggle the first pin before freeing it
@@ -459,6 +495,20 @@ void free_nodes()
         // make the "next" node the "first" node
         first = next;
     }
+}
+
+/*
+ * used to reset counters
+ */
+void reset()
+{ 
+  // shut down all pins
+  for(int i=1;i<=7;i++) 
+  {
+    digitalWrite(pin, LOW);
+  } 
+  // reset counter
+  load_counter = 0;
 }
 
 void loop()
