@@ -1,7 +1,17 @@
-/*
+/****************************************************************************
+ * DATA_STRUCTURES
  *
+ * Computer Science 50
+ * Christopher Bartholomew
+ * Data Structure Solutions Created by: Nate Hardison 
+ * 
+ * Choose one of the three methods to create various data structures using lights on the arduino board.
  *
- */
+ * Demonstrates use of stacks/queues/single linked lists
+ * 
+ * BONUS:
+ * 1. Create one using a Hash Table / Hash Function
+ ***************************************************************************/
  
 #include <stdlib.h>
 #include <avr-libc.h>
