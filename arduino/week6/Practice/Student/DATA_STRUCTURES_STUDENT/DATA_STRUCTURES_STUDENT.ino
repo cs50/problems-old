@@ -29,7 +29,7 @@ void setup()
 {
 	// begin reading from serial
 	Serial.begin(9600); 
-    
+     
         // init pins
         init_pinmode();
         
@@ -61,7 +61,9 @@ int queue_pins[MAX_PINS] = { 2, 3, 4, 5, 6, 7 };
 // declare a queue (as a global variable)
 queue q;
 
-
+/*
+ * used to enqueue a number
+ */  
 bool enqueue(int num)
 {
     /* Remove Me
@@ -85,6 +87,9 @@ bool enqueue(int num)
     return true;
 }
 
+/*
+ * used to dequeue a number
+ */  
 bool dequeue(void)
 {
     /* Remove Me
@@ -137,7 +142,9 @@ int stack_pins[MAX_PINS] = { 2, 3, 4, 5, 6, 7 };
 // declare a stack (as a global variable)
 stack s;
 
-
+/*
+ * used to "push" on to the top of the stack
+ */  
 bool push(int num)
 {
     /* Remove Me
@@ -156,6 +163,9 @@ bool push(int num)
     return true;
 }
 
+/*
+ * used to "pop" off the top of the stack
+ */  
 int pop()
 {  
      /* Remove Me
@@ -210,7 +220,9 @@ int insert_pin   = 4;
 // declare the very first "led_node" in our list
 led_node* first = NULL;
 
-
+/*
+ * used to build a node!
+ */  
 static struct led_node* build_node(int i)
 {
     
@@ -231,6 +243,9 @@ static struct led_node* build_node(int i)
 
 }
 
+/*
+ * used to build a node and place it at the beginning of the list
+ */  
 void prepend(int i)
 {
    /* Remove Me
@@ -247,6 +262,29 @@ void prepend(int i)
     */
 }
 
+/*
+ * used to check the length of the linked list
+ */
+int length(void)
+{
+    /* Remove Me
+    int length = 0;
+    
+    // TODO!
+    // for each led_node - starting with first; and as long as the led node is not null, the next increament should be equal to the next node :)
+    // i.e. not all for-loops HAVE to be ints :)
+    for ()
+    {
+        // TODO!
+        // what should be incremented here?
+    }
+    return length;
+    */
+}
+
+/*
+ * used to build a node and insert it after a node that exists already
+ */  
 static void insert_after(led_node* n, int i)
 {
     /* Remove Me
@@ -266,6 +304,9 @@ static void insert_after(led_node* n, int i)
     */
 }
 
+/*
+ * used to append to the last part of the list
+ */
 void append(int i)
 {
   
@@ -297,6 +338,9 @@ void append(int i)
    
 }
 
+/*
+ * used to check if a matching data structure pin is there - if so - return the address
+ */
 struct led_node* contains(int pin)
 {
     /* Remove Me
@@ -314,22 +358,6 @@ struct led_node* contains(int pin)
 }
 
 
-int length(void)
-{
-    /* Remove Me
-    int length = 0;
-    
-    // TODO!
-    // for each led_node - starting with first; and as long as the led node is not null, the next increament should be equal to the next node :)
-    // i.e. not all for-loops HAVE to be ints :)
-    for ()
-    {
-        // TODO!
-        // what should be incremented here?
-    }
-    return length;
-    */
-}
 
 
 /*********************************************************************************************************************************************
